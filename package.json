@@ -1,0 +1,24 @@
+{
+  "name": "photo_booth",
+  "productName": "PhotoApp",
+  "version": "1.0.0",
+  "description": "An application for self photographing",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/audiblemaple/photo_booth.git"
+  },
+  "author": "Lior Jigalo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/audiblemaple/photo_booth/issues"
+  },
+  "homepage": "https://github.com/audiblemaple/photo_booth#readme",
+  "dependencies": {
+    "electron": "^27.0.0"
+  }
+}
