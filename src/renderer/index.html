@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sketch="">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo app</title>
+    <link rel="stylesheet" href="styles/main_style.css">
+    <link rel="stylesheet" href="styles/cam_feed_style.css">
+<!--    <link rel="stylesheet" href="styles/bottom_bar_style.css">-->
+    <link rel="stylesheet" href="styles/sidebar_style.css">
+
+</head>
+<body>
+    <video id="camera-feed" autoplay></video>
+
+<!--    <div class="container-menu">-->
+<!--        <input id="btn" type="checkbox" /><label for="btn"></label>-->
+<!--        <div class="menu">-->
+<!--            <div class="menu-item">-->
+<!--                <svg class="icon icon-fly"><use xlink:href="#icon-fly"></use></svg>-->
+<!--            </div>-->
+<!--            <a class="menu-item" href="https://codepen.io/Anna_Batura/" target="_blank"><svg class="icon icon-man"><use xlink:href="#icon-man"></use></svg></a>-->
+<!--            <div class="menu-item">-->
+<!--                <div class="icon"></div>-->
+<!--            </div>-->
+<!--            <div class="menu-item">-->
+<!--                <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>-->
+<!--            </div>-->
+<!--            <div class="menu-item">-->
+<!--                <svg class="icon icon-email-menu"><use xlink:href="#icon-email"></use></svg>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <svg data-duration="10" data-delay="45" display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">-->
+<!--        <defs>-->
+<!--            <symbol id="icon-star" width="24" height="23" viewBox="0 0 24 23">-->
+<!--                <path class="cls-1" d="M3148.48,372.012a2.033,2.033,0,0,1-1.02-.29l-5.46-2.868-5.49,2.884a1.663,1.663,0,0,1-2.2-.326,1.751,1.751,0,0,1-.33-1.052,2.816,2.816,0,0,1,.04-0.411l1.05-6.135-4.45-4.328a1.993,1.993,0,0,1-.63-1.344,1.616,1.616,0,0,1,1.58-1.588l6.15-.894,2.75-5.565A1.653,1.653,0,0,1,3142,349a1.678,1.678,0,0,1,1.55,1.116l2.74,5.543,6.13,0.892a1.613,1.613,0,0,1,1.59,1.59,1.89,1.89,0,0,1-.63,1.335l-4.45,4.336,1.06,6.113c0.01,0.125.02,0.258,0.02,0.434a1.791,1.791,0,0,1-.32,1.048A1.455,1.455,0,0,1,3148.48,372.012Zm-6.48-5.395,5.95,3.127-1.14-6.621,4.8-4.689-6.63-.965-2.98-6.016-2.97,6.016-6.65.967,4.82,4.686-1.14,6.621Z" transform="translate(-3130 -349)"></path></symbol>-->
+<!--            <symbol id="icon-email" width="26px" height="21px" viewBox="0 0 26 21">-->
+<!--                <path class="cls-1" d="M3406.8,2205h-22.01a1.625,1.625,0,0,1-1.8-1.74V2192a1.01,1.01,0,0,1,2.02,0v11h21.79a1.248,1.248,0,0,0,.21-0.02V2192a1,1,0,1,1,1.99,0v11.26C3409,2204.3,3408.11,2205,3406.8,2205Zm-11.03-9.05a2.13,2.13,0,0,1-1.25-.39l-0.01-.01-10.69-7.85a1.954,1.954,0,0,1-.73-2.22,2.134,2.134,0,0,1,2.06-1.48h21.42a2.134,2.134,0,0,1,2.06,1.48,1.974,1.974,0,0,1-.73,2.23l-10.73,7.78A2.369,2.369,0,0,1,3395.77,2195.95Zm-0.09-2.02a0.7,0.7,0,0,0,.47-0.06l10.86-7.79v0.01a2.277,2.277,0,0,0-.44-0.09h-21.42a0.141,0.141,0,0,0-.17.1Z" transform="translate(-3383 -2184)"></path></symbol>-->
+<!--            <symbol id="icon-man" width="21" height="22" viewBox="0 0 21 22">-->
+<!--                <path class="cls-1" d="M3141.5,290a5.5,5.5,0,1,1,5.51-5.5A5.517,5.517,0,0,1,3141.5,290Zm0-8.967a3.469,3.469,0,1,0,3.48,3.469A3.478,3.478,0,0,0,3141.5,281.03ZM3151.99,301h-20.98v-0.957c0-3.89,4.7-7.055,10.49-7.055s10.49,3.165,10.49,7.055V301ZM3133,299h17c-0.76-2.348-4.44-4.1-8.5-4.1S3133.76,296.652,3133,299Z" transform="translate(-3131 -279)"></path></symbol>-->
+<!--            <symbol id="icon-fly" width="22" height="21" viewBox="0 0 22 21">-->
+<!--                <path class="cls-1" d="M3140.77,231a2.235,2.235,0,0,1-.4-0.046,1.819,1.819,0,0,1-1.07-.682A2.146,2.146,0,0,1,3139,229v-7h-7c-1.06,0-1.68-.05-1.95-1.23a1.918,1.918,0,0,1,.12-1.207,1.849,1.849,0,0,1,.87-0.9l18.25-8.474a1.9,1.9,0,0,1,2.18.37,1.834,1.834,0,0,1,.32,2.159l-9.36,17.24A1.777,1.777,0,0,1,3140.77,231Zm0.23-11v8l8.82-15.837L3133,220h8Z" transform="translate(-3130 -210)"></path></symbol>-->
+<!--            <symbol id="iphone" viewBox="0 0 221 464">-->
+<!--                <g id="Page-1" stroke="none" stroke-width="1" fill="#fff" fill-rule="evenodd" sketch:type="MSPage">-->
+<!--                    <path d="M3,164 L0,164 L0,147 L3,147 L3,126 L0,126 L0,109 L3,109 L3,87 L0,87 L0,66 L3,66 L3,34.0058827 C3,16.3333538 17.3228613,2 34.9910061,2 L149,2 L149,0 L185,0 L185,2 L189.008994,2 C206.675354,2 221,16.3295218 221,34.0058827 L221,431.994117 C221,449.666646 206.677139,464 189.008994,464 L34.9910061,464 C17.3246455,464 3,449.670478 3,431.994117 L3,164 Z M94.0088498,40 C93.4516774,40 93,40.4433532 93,41.0093689 L93,42.9906311 C93,43.5480902 93.4508527,44 93.9996148,44 L116.404905,44 L128.992078,44 C129.548738,44 130,43.5566468 130,42.9906311 L130,41.0093689 C130,40.4519098 129.558697,40 128.99115,40 L94.0088498,40 Z M111.5,29 C113.985281,29 116,26.9852815 116,24.5 C116,22.0147185 113.985281,20 111.5,20 C109.014719,20 107,22.0147185 107,24.5 C107,26.9852815 109.014719,29 111.5,29 Z M17.9944647,66 C16.8929523,66 16,66.9024743 16,68.0096543 L16,398.990346 C16,400.100247 16.8987528,401 17.9944647,401 L206.005535,401 C207.107048,401 208,400.097526 208,398.990346 L208,68.0096543 C208,66.8997529 207.101247,66 206.005535,66 L17.9944647,66 Z M112,450 C122.493411,450 131,441.493411 131,431 C131,420.506589 122.493411,412 112,412 C101.506589,412 93,420.506589 93,431 C93,441.493411 101.506589,450 112,450 Z M81,45 C82.6568543,45 84,43.6568543 84,42 C84,40.3431457 82.6568543,39 81,39 C79.3431457,39 78,40.3431457 78,42 C78,43.6568543 79.3431457,45 81,45 Z M112,448 C121.388841,448 129,440.388841 129,431 C129,421.611159 121.388841,414 112,414 C102.611159,414 95,421.611159 95,431 C95,440.388841 102.611159,448 112,448 Z" sketch:type="MSShapeGroup"></path>-->
+<!--                </g>-->
+<!--            </symbol>-->
+
+<!--        </defs></svg>-->
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <nav class="menu">
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+        <label class="menu-open-button" for="menu-open">
+            <span class="hamburger hamburger-1"></span>
+            <span class="hamburger hamburger-2"></span>
+            <span class="hamburger hamburger-3"></span>
+        </label>
+
+        <a href="#" class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
+        <a href="#" class="menu-item"> <i class="fa fa-plus"></i> </a>
+        <a href="#" class="menu-item"> <i class="fa fa-heart"></i> </a>
+        <a href="#" class="menu-item"> <i class="fa fa-envelope"></i> </a>
+
+
+    </nav>
+
+
+    <!-- filters -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="shadowed-goo">
+
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+                <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+                <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+                <feComposite in2="shadow" in="goo" result="goo" />
+                <feComposite in2="goo" in="SourceGraphic" result="mix" />
+            </filter>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                <feComposite in2="goo" in="SourceGraphic" result="mix" />
+            </filter>
+        </defs>
+    </svg>
+
+
+
+    <script defer src="js/renderer.js"></script>
+</body>
+</html>
